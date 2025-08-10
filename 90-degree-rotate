@@ -1,0 +1,21 @@
+def rotate90_anticlockwise(mat):
+    n = len(mat)
+    # Transpose
+    for i in range(n):
+        for j in range(i, n):
+            mat[i][j], mat[j][i] = mat[j][i], mat[i][j]
+    # Reverse each column
+    for col in range(n):
+        top, bottom = 0, n - 1
+        while top < bottom:
+            mat[top][col], mat[bottom][col] = mat[bottom][col], mat[top][col]
+            top += 1
+            bottom -= 1
+    return mat
+
+
+n = int(input("Enter size of square matrix: "))
+mat = [list(map(int, input().split())) for _ in range(n)]
+mat = rotate90_anticlockwise(mat)
+for row in mat:
+    print(*row)
