@@ -1,0 +1,6 @@
+n, m = map(int, input("Enter rows and columns: ").split())
+mat = [list(map(int, input().split())) for _ in range(n)]
+zero_count = sum(row.count(0) for row in mat)
+total_elements = n * m
+
+print("Yes" if zero_count > total_elements / 2 else "No")
