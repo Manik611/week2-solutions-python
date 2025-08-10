@@ -1,0 +1,11 @@
+A = [5, 0, 10, 6]
+B = [1, 2, 4]
+size = max(len(A), len(B))
+sum_arr = [0] * size
+
+for i in range(len(A)):
+    sum_arr[i] += A[i]
+for i in range(len(B)):
+    sum_arr[i] += B[i]
+
+print("Sum[] =", *sum_arr)
