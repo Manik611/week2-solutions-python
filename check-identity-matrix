@@ -1,0 +1,9 @@
+n = int(input("Enter order of square matrix: "))
+mat = [list(map(int, input().split())) for _ in range(n)]
+
+is_identity = all(
+    (mat[i][j] == 1 if i == j else mat[i][j] == 0)
+    for i in range(n) for j in range(n)
+)
+
+print("True" if is_identity else "False")
