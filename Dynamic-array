@@ -1,0 +1,13 @@
+n, q = map(int, input().split())
+arr = [[] for _ in range(n)]
+last_answer = 0
+
+for _ in range(q):
+    type_, x, y = map(int, input().split())
+    idx = (x ^ last_answer) % n
+    if type_ == 1:
+        arr[idx].append(y)
+    elif type_ == 2:
+        pos = y % len(arr[idx])
+        last_answer = arr[idx][pos]
+        print(last_answer)
